@@ -3,14 +3,27 @@ import BtnPrimary from './BtnPrimary';
 import InputText from './InputText';
 
 const UserForm = () => {
-	const { handleSudmit, handleChange } = useForm();
+	const { handleSudmit, handleChange, values } = useForm();
 
 	return (
 		<>
 			<form className='f f-column' onSubmit={handleSudmit}>
 				<label htmlFor='name'>Username:</label>
-				<InputText name='name' id='name' handleChange={handleChange} />
-				<BtnPrimary text='Entrar' width='2rem' type='submit' />
+				<InputText
+					name='username'
+					id='username'
+					handleChange={handleChange}
+					error={values?.username?.error}
+					message={values?.username?.message}
+					maxLength={8}
+					require={true}
+				/>
+				<BtnPrimary
+					text='Entrar'
+					width='2rem'
+					type='submit'
+					disabled={!values?.sudmit}
+				/>
 			</form>
 			<style jsx>{`
 				form {

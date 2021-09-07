@@ -1,9 +1,9 @@
 import Container from './Container';
 
-const BtnPrimary = ({ text, width, height, type = 'click' }) => (
+const BtnPrimary = ({ text, width, height, type = 'click', disabled= false}) => (
 	<>
 		<Container height={height} width={width}>
-			<button type={type}>{text}</button>
+			<button type={type} disabled={disabled}>{text}</button>
 		</Container>
 		<style jsx>{`
 			button {
@@ -14,7 +14,7 @@ const BtnPrimary = ({ text, width, height, type = 'click' }) => (
 				border-radius: 4px;
 				font-size: 12px;
 				letter-spacing: 1px;
-				cursor: pointer;
+				cursor: ${disabled ? 'not-allowed' : 'pointer'};
 			}
 			button:active {
 				transform: scale(0.9);

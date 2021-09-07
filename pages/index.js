@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Home from '../components/Home';
 
 import { useEffect } from 'react';
-import UserDb from '../lib/userDb';
+// import UserDb from '../lib/userDb';
 
 export default function Index({ datos }) {
 	useEffect(() => console.log(datos), []);
@@ -18,7 +18,7 @@ export default function Index({ datos }) {
 }
 
 export async function getStaticProps(context) {
-	const user = new UserDb();
+	// const user = new UserDb();
 	// await user.InsertUsers('pedro');
 	const datos = [];
 	return {

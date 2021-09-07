@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 		try {
 			const { username } = req.body;
 			const resultados = await userDb.InsertUsers(username || '');
-			res.status(201).json(resultados);
+			res.status(resultados.statusCode).json(resultados);
 		} catch (e) {
 			res.status(500).json({
 				error: true,

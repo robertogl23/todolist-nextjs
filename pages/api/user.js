@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 		// Process a POST request
 		try {
 			const { username } = req.body;
-			const resultados = await userDb.InsertUsers(username);
+			const resultados = await userDb.InsertUsers(username || '');
 			res.status(201).json(resultados);
 		} catch (e) {
 			res.status(500).json({

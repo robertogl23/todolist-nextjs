@@ -17,9 +17,8 @@ const InputText = ({
 		<style jsx>{`
 			div{
 				display: flex;
-				flex-direction: column;
-				
-				padding: .2rem;
+				flex-direction: column;	
+				min-width: 8rem;
 			}
 			input {
 				padding: 0.4rem 0.4rem;
@@ -36,11 +35,12 @@ const InputText = ({
 				border: 0.1rem solid ${error ? '#f92e2e' :' var(--purple-1)' };
 			}
 			span{
-				font-size: .6rem;
-				letter-spacing: 1px;
+				font-size: .5rem;
+				letter-spacing: .8px;
 				font-weight: 400;
 				color: #f92e2e;
-				height: 1rem;
+				height: .8rem;
+				max-width: 100%;
 				padding: 0rem .2rem;
 				display: flex;
 				align-items: center;

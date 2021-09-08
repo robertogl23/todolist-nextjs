@@ -26,7 +26,7 @@ const InputText = ({
 				padding: 0.4rem;
 				transition: border 0.4s ease-out;
 				border-radius: 4px;
-				background-color: var(--purple-2);
+				background-color: ${error ? '#fff2f2' :' var(--purple-3)' };
 				font-size: 14px;
 				letter-spacing: 1px;
 				color: var(--black-1);

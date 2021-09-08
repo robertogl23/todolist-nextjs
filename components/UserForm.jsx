@@ -28,13 +28,14 @@ const UserForm = () => {
 			<style jsx>{`
 				form {
 					padding: 0.5rem 1rem;
-					gap: 0.5rem;
+					gap: 0.1rem;
 				}
 				label {
 					font-weight: 600;
 					letter-spacing: 1px;
 					font-size: 12px;
 					cursor: pointer;
+					margin-bottom: .3rem;
 				}
 			`}</style>
 		</>

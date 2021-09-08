@@ -30,6 +30,7 @@ const useFields = () => {
 	return {
 		values,
 		handleChange,
+		setValues
 	};
 };
 

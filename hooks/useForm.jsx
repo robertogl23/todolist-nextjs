@@ -1,12 +1,31 @@
 import useFields from '../hooks/useFields';
-// import userDb from '../lib/userDb';
+import Validaciones from '../lib/validaciones';
+import userService from '../services/userService';
 
 const useForm = () => {
-	const { handleChange, values } = useFields();
-
-	const handleSudmit = (e) => {
+	const { handleChange, values, setValues } = useFields();
+	const value = values?.username?.value;
+	const handleSudmit = async (e) => {
 		e.preventDefault();
-		// console.log(userDb.InsertUsers('values.username'));
+		const { error, message } = Validaciones.ValidarUsername({
+			username: value,
+		});
+		if (error) {
+			return setValues({
+				username: { error, message },
+			});
+		}
+		try {
+			const res = await userService.isert(value);
+			return setValues({
+				username: res,
+			});
+		} catch (error) {
+			return setValues({
+				error: true,
+				message: 'error service',
+			});
+		}
 	};
 	return {
 		values,

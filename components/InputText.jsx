@@ -5,13 +5,14 @@ const InputText = ({
 	error = false,
 	message,
 	maxLength = 0,
+	minLength = 0,
 	require = false,
 }) => (
 	<div>
 		<input
 			name={name}
 			id={id}
-			onChange={(e)=> handleChange(e,maxLength)}
+			onChange={(e)=> handleChange(e,maxLength,minLength)}
 		/>
 		<span>{error ? message : ''}</span>
 		<style jsx>{`

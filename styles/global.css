@@ -12,7 +12,8 @@
 	--purple-2: #591bd617;
 	--purple-3: #591bd636;
 	--black-1: #0e0e0e;
-	--Shadow-1: 0 1px 1px 0 rgb(0 0 0 / 10%);
+	--Shadow-1: 0 2px 1px 0 rgb(0 0 0 / 10%);
+	--Shadow-2: 0 1.6px 0 0 rgb(0 0 0 / 30%);
 }
 input {
 	border: none;

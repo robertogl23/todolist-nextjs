@@ -3,14 +3,14 @@ import { useState } from 'react';
 const useFields = () => {
 	const [values, setValues] = useState();
 
-	const handleChange = (e, maxLength) => {
+	const handleChange = (e, maxLength,minLength) => {
 		const value = e.target.value;
-		if (value.length > maxLength) {
+		if (value.length > maxLength || value.length < minLength) {
 			return setValues({
 				...values,
 				[e.target.id]: {
 					value,
-					message: 'error max length',
+					message: 'Campo invalido',
 					error: true,
 				},
 				sudmit: false,

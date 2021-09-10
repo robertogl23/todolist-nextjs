@@ -15,7 +15,7 @@ const BtnPrimary = ({ text, width, height, type = 'click', disabled= false}) => 
 				font-size: 12px;
 				letter-spacing: 1px;
 				cursor: ${disabled ? 'not-allowed' : 'pointer'};
-				box-shadow : var(--Shadow-1);
+				box-shadow : var(--Shadow-2);
 			}
 			button:active {
 				transform: scale(0.9);

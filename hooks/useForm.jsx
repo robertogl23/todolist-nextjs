@@ -6,6 +6,7 @@ import { useState } from 'react';
 const useForm = () => {
 	const { handleChange, values, setValues } = useFields();
 	const [isLoading, setIsLoading] = useState();
+	const [isError, setIsError] = useState();
 	const router = useRouter();
 	const name = values?.username?.value;
 
@@ -17,16 +18,24 @@ const useForm = () => {
 		});
 		if (error) {
 			setIsLoading(false);
-			return setValues({
+			setValues({
 				username: { error, message },
 			});
+			return;
 		}
 		try {
 			const res = await userService.isert(value);
+			if (res.typeError && res.typeError === "input") {
+				setValues({
+					username: { error: res.error, message: res.message },
+				});
+				reutrn
+			}
 			setValues({
-				username: res,
+				username: value,
 			});
-			return router.push(`/${value}`);
+			router.push(`/${value}`);
+			return;
 		} catch (error) {
 			setIsLoading(false);
 			return setValues({
